@@ -28,7 +28,7 @@ const New = ({route}) => {
                 note : yournotes,
                 title : yourtitle
             }
-            axios.post(`https://62c1dbbb2a7fa33f7707dd52--luminous-melba-d1742f.netlify.app/.netlify/functions/server/${user}/createnote`, credentials)
+            axios.post(`${host}/${user}/createnote`, credentials)
             .then(res => {
                 if(res.data){
                     ToastAndroid.show("Notes Added", 3000)
