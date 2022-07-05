@@ -11,7 +11,7 @@ const Task = (props) => {
         const details = {
             taskId : props.user
         }
-        axios.post(`https://62c1dbbb2a7fa33f7707dd52--luminous-melba-d1742f.netlify.app/.netlify/functions/server/deletetask`,details)
+        axios.post(`${host}/deletetask`,details)
         .then(res => {
             console.log(res.data)
             ToastAndroid.show("Task Deleted!", 3000)
