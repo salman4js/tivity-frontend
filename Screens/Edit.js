@@ -26,7 +26,7 @@ const Edit = ({route}) => {
         }
         console.log(userid);
         {
-            axios.post(`https://62c1dbbb2a7fa33f7707dd52--luminous-melba-d1742f.netlify.app/.netlify/functions/server/${userid}/updatedata`, credentials)
+            axios.post(`${host}/${userid}/updatedata`, credentials)
             .then(data => {
                 console.log(data)
                 ToastAndroid.show("Profile Updated successfully!", 3000)
