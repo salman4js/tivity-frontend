@@ -15,7 +15,7 @@ const Home2 = (props) => {
     const navigation = useNavigation()
 
     const getNotes = () => {
-        axios.post(`https://62c1dbbb2a7fa33f7707dd52--luminous-melba-d1742f.netlify.app/.netlify/functions/server/${props.user}/allnotes`)
+        axios.post(`${host}/${props.user}/allnotes`)
         .then(res => setNotes(res.data))
     }
 
