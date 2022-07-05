@@ -26,7 +26,7 @@ const Expense = (props) => {
 
 
     const getExpense = () => {
-        axios.post(`https://62c1dbbb2a7fa33f7707dd52--luminous-melba-d1742f.netlify.app/.netlify/functions/server/${props.user}/allexpenseuser`)
+        axios.post(`${host}/${props.user}/allexpenseuser`)
             .then(res => {
                 setExpenses(res.data)
             })
@@ -50,7 +50,7 @@ const Expense = (props) => {
                 expense : selectedLanguage,
                 date : new Date().toDateString()
             }
-            axios.post(`https://62c1dbbb2a7fa33f7707dd52--luminous-melba-d1742f.netlify.app/.netlify/functions/server/${props.user}/addexpense`,credentials)
+            axios.post(`${host}/${props.user}/addexpense`,credentials)
             .then(data => {
                 //console.log(data)
                 ToastAndroid.show("Added successfull!", 3000)
