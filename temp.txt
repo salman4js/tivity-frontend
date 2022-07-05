@@ -1,0 +1,45 @@
+
+ const userid = route.params
+    const user = JSON.stringify(userid.userid).split('"').join('');
+
+
+<Stack.Screen options = {{headerShown : false}} name = "Login" component = {Login} />
+          <Stack.Screen options = {{headerShown : false}} name = "Signin" component = {Signin} />
+          <Stack.Screen options = {{headerShown : false}} name = "Home" component={Home} />
+          <Stack.Screen options = {{headerShown : false}} name = "Bottom" component={Bottom} />
+          <Stack.Screen options = {{headerShown : false}} name = "Home2" component={Home2}/>
+          <Stack.Screen options = {{headerShown : false}} name = "Brief" component = {Brief} />
+          <Stack.Screen options = {{headerShown : false}} name = "New" component={New} />
+          <Stack.Screen options = {{headerShown : false}} name = "Expense" component = {Expense} />
+          <Stack.Screen options = {{headerShown : false}} name = "Profile" component={Profile} />
+          <Stack.Screen options = {{headerShown : true}} name = "Edit" component={Edit} />
+          <Stack.Screen options = {{headerShown : true}} name = "Before" component={Before} />
+          <Stack.Screen options = {{headerShown : true}} name = "Expense Analytics" component={Bar} />
+
+
+<View style = {styles.header}>
+                <Image
+                    style={styles.logo}
+                    source={{
+                    uri: 'https://reactnative.dev/img/tiny_logo.png',
+                    }}
+                />
+                <Text style = {styles.headerStyle}>
+                    Username 
+                </Text>
+                <Text style = {styles.emailStyle}>
+                    Email
+                </Text>
+                <View style = {styles.loginButton}>
+                    <TouchableOpacity style = {styles.smallButton}>
+                        <Text style = {styles.smallButtonText}>
+                            Edit Profile
+                        </Text>
+                    </TouchableOpacity>
+                </View>
+                <View style = {styles.analytics}>
+                    <Text style = {styles.AnalyticsStyle}>
+                        Expense Analytics!
+                    </Text>
+                </View>
+            </View>
