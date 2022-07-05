@@ -18,7 +18,7 @@ const Login = ({ navigation }) => {
                 email : email,
                 password : password
             }
-            axios.post("https://62c1dbbb2a7fa33f7707dd52--luminous-melba-d1742f.netlify.app/.netlify/functions/server/login",credentials)
+            axios.post("${host}/login",credentials)
             .then(res => {if(res.data === 0){
                 console.log("No User Has Been Found");
                 ToastAndroid.show("No user has been found", 3000);
