@@ -17,7 +17,7 @@ const Brief = ({navigation, route}) => {
             title : yourtitle,
             noteId : yourid
         }
-        axios.post("https://62c1dbbb2a7fa33f7707dd52--luminous-melba-d1742f.netlify.app/.netlify/functions/server/noteupdater",credentials)
+        axios.post("${host}/noteupdater",credentials)
         .then(res => {
             console.log("Notes Udpated");
             ToastAndroid.show("Notes Updated", 3000)
