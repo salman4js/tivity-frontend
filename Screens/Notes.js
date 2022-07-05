@@ -13,7 +13,7 @@ const Notes = (props) => {
         const credentials = {
             noteId : props.noteId
         }
-        axios.post("https://62c1dbbb2a7fa33f7707dd52--luminous-melba-d1742f.netlify.app/.netlify/functions/server/deletenote",credentials)
+        axios.post("${host}/deletenote",credentials)
         .then(res => {
             console.log("Notes Deleted")
             ToastAndroid.show("Notes Deleted", 3000)
