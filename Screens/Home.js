@@ -21,7 +21,7 @@ const Home = (props) => {
             const credentials = {
                 task : tasks
             }
-            axios.post(`https://62c1dbbb2a7fa33f7707dd52--luminous-melba-d1742f.netlify.app/.netlify/functions/server/${props.user}/createtask`,credentials)
+            axios.post(`${host}/${props.user}/createtask`,credentials)
             .then(res => {
                 console.log(res.data)
                 ToastAndroid.show("Task Added Successfully!", 3000)
@@ -31,7 +31,7 @@ const Home = (props) => {
 
     const getTasks = () => {
         console.log("Home", props.user)
-        axios.post(`https://62c1dbbb2a7fa33f7707dd52--luminous-melba-d1742f.netlify.app/.netlify/functions/server/${props.user}/alltasks`)
+        axios.post(`${host}/${props.user}/alltasks`)
             .then(res => {
                 setTask(res.data)
             })
