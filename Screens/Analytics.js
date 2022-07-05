@@ -19,7 +19,7 @@ const Analytics = (props) => {
     const [groceries, setGroceries] = useState();
 
     const getBal = () => {
-        axios.post(`https://62c1dbbb2a7fa33f7707dd52--luminous-melba-d1742f.netlify.app/.netlify/functions/server/${props.user}/received`)
+        axios.post(`${host}/${props.user}/received`)
         .then(data => {
             setBalance(data.data)
         })
@@ -32,35 +32,35 @@ const Analytics = (props) => {
 
     const graphData = () => {
         {
-            axios.post(`https://62c1dbbb2a7fa33f7707dd52--luminous-melba-d1742f.netlify.app/.netlify/functions/server/${props.user}/average`, {expense : "Entertainment"})
+            axios.post(`${host}/${props.user}/average`, {expense : "Entertainment"})
             .then(data => {
                 console.log(data.data)
                 setEntertainment(data.data)
             })
         }
         {
-            axios.post(`https://62c1dbbb2a7fa33f7707dd52--luminous-melba-d1742f.netlify.app/.netlify/functions/server/${props.user}/average`, {expense : "Food"})
+            axios.post(`${host}/${props.user}/average`, {expense : "Food"})
             .then(data => {
                 console.log(data.data)
                 setFood(data.data)
             })
         }
         {
-            axios.post(`https://62c1dbbb2a7fa33f7707dd52--luminous-melba-d1742f.netlify.app/.netlify/functions/server/${props.user}/average`, {expense : "Rent"})
+            axios.post(`${host}/${props.user}/average`, {expense : "Rent"})
             .then(data => {
                 console.log(data.data)
                 setRent(data.data)
             })
         }
         {
-            axios.post(`https://62c1dbbb2a7fa33f7707dd52--luminous-melba-d1742f.netlify.app/.netlify/functions/server/${props.user}/average`, {expense : "Groceries"})
+            axios.post(`${host}/${props.user}/average`, {expense : "Groceries"})
             .then(data => {
                 console.log(data.data)
                 setGroceries(data.data)
             })
         }
         {
-            axios.post(`https://62c1dbbb2a7fa33f7707dd52--luminous-melba-d1742f.netlify.app/.netlify/functions/server/${props.user}/average`, {expense : "Others"})
+            axios.post(`${host}/${props.user}/average`, {expense : "Others"})
             .then(data => {
                 console.log(data.data)
                 setOthers(data.data)
